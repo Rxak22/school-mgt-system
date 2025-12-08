@@ -12,7 +12,7 @@ class UserSeeder extends Seeder
     {
         // Admin account
         DB::table('users')->insert([
-            'name' => 'Rxak PSN',
+            'name' => 'Admin Rxak',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('password123'),
             'role' => 'admin',

@@ -66,6 +66,8 @@ You will need the following software installed:
     php artisan migrate --seed
     ```
     *This command will create the necessary tables and populate the database with initial data (if seeders are defined).*
+    
+    ***please note***: login with email **`admin@gmail.com`** and password **`password123`**
 
 6.  **Install Frontend Dependencies (npm):**
     ```bash

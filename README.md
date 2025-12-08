@@ -4,6 +4,18 @@ This is a web application built using the Laravel framework to manage school dat
 
 ---
 
+## 🔗 Live Demo & Credentials
+
+You can view and interact with the live deployment of this project.
+
+| Detail | Value |
+| :--- | :--- |
+| **Live URL** | **[https://school-mgt-system-psi.vercel.app/](https://school-mgt-system-psi.vercel.app/)** |
+| **Admin Email** | `admin@gmail.com` |
+| **Admin Password** | `password123` |
+
+---
+
 ## ✨ Features
 
 * **Authentication:** Secure sign-in/sign-out functionality.

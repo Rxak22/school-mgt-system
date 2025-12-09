@@ -12,28 +12,28 @@
 
 
         <!-- Sidebar Start -->
-        @include('component/sidebar')
+        @include('component.sidebar')
         <!-- Sidebar End -->
 
 
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
-            @include('component/nav')
+            @include('component.nav')
             
             {{-- modal --}}
-            @include('component/department/modal-delete')
-            @include('component/department/add-modal')
-            @include('component/department/modal-update')
+            @include('component.department.modal-delete')
+            @include('component.department.add-modal')
+            @include('component.department.modal-update')
 
 
             <div class="d-flex pt-3 px-1">
                 <!-- table -->
-                @include('component\department\table-department')
+                @include('component.department.table-department')
         </div>
 
             {{-- footer --}}
-            @include('component\footer')
+            @include('component.footer')
         </div>
         <!-- Content End -->
 

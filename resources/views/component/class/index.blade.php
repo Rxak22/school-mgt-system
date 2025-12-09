@@ -12,34 +12,34 @@
 
 
         <!-- Sidebar Start -->
-        @include('component/sidebar')
+        @include('component.sidebar')
         <!-- Sidebar End -->
 
 
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
-            @include('component/nav')
+            @include('component.nav')
 
             {{-- modal  --}}
             @include('error.message')
-            @include('component/class/add-modal')
-            @include('component/class/modal-update')
-            @include('component/class/add_student_to_class_modal')
-            @include('component/class/modal-delete')
-            @include('component/class/modal-changeClass')
+            @include('component.class.add-modal')
+            @include('component.class.modal-update')
+            @include('component.class.add_student_to_class_modal')
+            @include('component.class.modal-delete')
+            @include('component.class.modal-changeClass')
 
             <div class="d-flex pt-3 px-1">
                 <!-- table -->
-                @include('component\class\table-class')
+                @include('component.class.table-class')
         </div>
 
             {{-- footer --}}
-            @include('component\footer')
+            @include('component.footer')
         </div>
         <!-- Content End -->
 
         {{-- student show modal --}}
-        @include('component/class/modal-show')
+        @include('component.class.modal-show')
     </div>
 @endsection

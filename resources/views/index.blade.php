@@ -11,21 +11,21 @@
         <!-- Spinner End -->
 
         <!-- Sidebar Start -->
-        @include('component/sidebar')
+        @include('component.sidebar')
         <!-- Sidebar End -->
 
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
-            @include('component/nav')
+            @include('component.nav')
             <!-- Navbar End -->
 
             <!-- Dashboard Component -->
-            @include('component/dashboard')
+            @include('component.dashboard')
             <!-- Dashboard Component End -->
 
             <!-- Footer Start -->
-            @include('component/footer')
+            @include('component.footer')
             <!-- Footer End -->
         </div>
         <!-- Content End -->

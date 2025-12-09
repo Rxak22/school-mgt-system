@@ -12,7 +12,7 @@
 
 
         <!-- Sidebar Start -->
-        @include('component/sidebar')
+        @include('component.sidebar')
         <!-- Sidebar End -->
 
 
@@ -22,20 +22,20 @@
             <div class="show-img"></div>
 
             <!-- Navbar Start -->
-            @include('component/nav')
+            @include('component.nav')
 
             @include('error.message')
-            @include('component/modal-delete')
-            @include('component/modal-update')
+            @include('component.modal-delete')
+            @include('component.modal-update')
             <div class="d-flex pt-3 px-1">
                 <!-- table -->
-                @include('component\table-user')
+                @include('component.table-user')
                 {{-- form --}}
-                @include('component\form-user')
+                @include('component.form-user')
             </div>
 
             {{-- footer --}}
-            @include('component\footer')
+            @include('component.footer')
         </div>
         <!-- Content End -->
 

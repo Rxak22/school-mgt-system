@@ -12,29 +12,29 @@
 
 
         <!-- Sidebar Start -->
-        @include('component/sidebar')
+        @include('component.sidebar')
         <!-- Sidebar End -->
 
 
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
-            @include('component/nav')
+            @include('component.nav')
 
             @include('error.message')
             {{-- modal --}}
-            @include('component/course/modal-delete')
-            @include('component/course/add-modal')
-            @include('component/course/modal-update')
+            @include('component.course.modal-delete')
+            @include('component.course.add-modal')
+            @include('component.course.modal-update')
 
 
             <div class="d-flex pt-3 px-1">
                 <!-- table -->
-                @include('component\course\table-course')
+                @include('component.course.table-course')
         </div>
 
             {{-- footer --}}
-            @include('component\footer')
+            @include('component.footer')
         </div>
         <!-- Content End -->
 

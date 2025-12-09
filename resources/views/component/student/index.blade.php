@@ -12,28 +12,28 @@
 
 
         <!-- Sidebar Start -->
-        @include('component/sidebar')
+        @include('component.sidebar')
         <!-- Sidebar End -->
 
 
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
-            @include('component/nav')
+            @include('component.nav')
             
             {{-- modal --}}
-            @include('component\class\modal-delete')
-            @include('component\class\modal-changeClass')
-            @include('component\student\modal-assign-class')
+            @include('component.class.modal-delete')
+            @include('component.class.modal-changeClass')
+            @include('component.student.modal-assign-class')
 
 
             <div class="d-flex pt-3 px-1">
                 <!-- table -->
-                @include('component\student\table-student')
+                @include('component.student.table-student')
         </div>
 
             {{-- footer --}}
-            @include('component\footer')
+            @include('component.footer')
         </div>
         <!-- Content End -->
 

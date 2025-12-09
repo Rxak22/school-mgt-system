@@ -9,7 +9,8 @@
                     <button type="button" class="btn btn-info btn-sm mb-4 create-course" id="create-course" data-bs-toggle="modal" data-bs-target="#add-course">Add Course</button> 
                 </div>
             </div>
-            <table class="table table-striped bg-secondary table_course" id="table_course">
+            <div class="table-responsive">
+                <table class="table table-striped bg-secondary table_course" id="table_course">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -48,8 +49,9 @@
                                     </td>
                                 </tr>
                             @endforeach
-                 </tbody>
-            </table>
-            {{$allCourse->links()}}
+                  </tbody>
+              </table>
+              </div>
+              {{$allCourse->links()}}
         </div>
 </div>

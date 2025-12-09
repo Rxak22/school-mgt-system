@@ -14,6 +14,7 @@
             </div>
         </div>
 
+        <div class="table-responsive">
         <table class="table table-striped bg-secondary table_course" id="table_department">
             <thead>
                 <tr>
@@ -32,30 +33,33 @@
                         <td>{{ $item->added_by }}</td>
                         <td>{{ $item->created_at->format('Y-m-d H:i') }}</td>
                         <td>
-                            {{-- Delete Button --}}
-                            <button 
-                                class="btn btn-danger delete-department" 
-                                value="{{ $item->id }}" 
-                                data-bs-toggle="modal" 
-                                data-bs-target="#delete-department">
-                                <i class="bi bi-trash"></i>
-                            </button>
+                            <div class="d-flex gap-1">
+                                {{-- Delete Button --}}
+                                <button 
+                                    class="btn btn-danger delete-department" 
+                                    value="{{ $item->id }}" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#delete-department">
+                                    <i class="bi bi-trash"></i>
+                                </button>
 
-                            {{-- Update Button --}}
-                            <button 
-                                class="btn btn-info update-department" 
-                                data-id="{{ $item->id }}" 
-                                data-name="{{ $item->department_name }}" 
-                                data-code="{{ $item->department_code }}" 
-                                data-bs-toggle="modal" 
-                                data-bs-target="#update-department">
-                                <i class="bi bi-pencil-square"></i>
-                            </button>
+                                {{-- Update Button --}}
+                                <button 
+                                    class="btn btn-info update-department" 
+                                    data-id="{{ $item->id }}" 
+                                    data-name="{{ $item->department_name }}" 
+                                    data-code="{{ $item->department_code }}" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#update-department">
+                                    <i class="bi bi-pencil-square"></i>
+                                </button>
+                            </div>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
+        </div>
 
         {{ $allDepartment->links() }}
     </div>

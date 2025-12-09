@@ -9,6 +9,7 @@
                     <option value="student">Student</option>
                 </select>
             </div>
+            <div class="table-responsive">
             <table class="table table-hover table-striped bg-secondary table_data" id="table_data">
                 <thead>
                     <tr>
@@ -33,8 +34,9 @@
                                     </td>
                                 </tr>
                         @endforeach
-                    </tbody>
-            </table>
-            {{$allUser->links()}}
+                        </tbody>
+                    </table>
+                    </div>
+                    {{$allUser->links()}}
         </div>
 </div>

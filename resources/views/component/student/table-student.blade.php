@@ -10,6 +10,7 @@
             </select>
         </div>
 
+        <div class="table-responsive">
         <table class="table table-hover table-striped bg-secondary table-student" id="table_class">
             <thead>
                 <tr>
@@ -83,6 +84,7 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
 
         {{ $allUser->links() }}
     </div>

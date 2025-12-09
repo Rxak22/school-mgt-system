@@ -5,6 +5,7 @@
             <h5 class="modal-title" id="">Student in this class</h5>
           </div>
           <div class="modal-body">
+            <div class="table-responsive">
             <table class="table table-striped bg-secondary table_show_student" id="table_show_student">
                 <thead>
                 </thead>
@@ -12,6 +13,7 @@
                                 
                     </tbody>
             </table>
+            </div>
           </div>
     </div>
   </div>

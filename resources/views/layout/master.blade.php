@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{csrf_token()}}">
 
     <!-- Favicon -->
-    <link href="assets/img/icon.png" rel="icon">
+    <link href="{{asset('assets/img/favicon.png')}}" rel="icon" type="image/png" sizes="32x32">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

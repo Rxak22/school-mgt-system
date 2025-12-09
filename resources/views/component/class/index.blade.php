@@ -28,6 +28,7 @@
             @include('component.class.add_student_to_class_modal')
             @include('component.class.modal-delete')
             @include('component.class.modal-changeClass')
+            @include('component.class.modal-coming')
 
             <div class="d-flex pt-3 px-1">
                 <!-- table -->

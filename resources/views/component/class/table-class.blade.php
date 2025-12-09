@@ -16,21 +16,22 @@
                     <button type="button" class="btn btn-info btn-sm mb-4 create-class" id="create-class" data-bs-toggle="modal" data-bs-target="#add-class">Add Class</button> 
                 </div>
             </div>
-            <table class="table table-striped bg-secondary table_class" id="table_class">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Class Name</th>
-                        <th scope="col">Room</th>
-                        <th scope="col">Building</th>
-                        <th scope="col">Subject</th>
-                        <th scope="col">Department</th>
-                        <th scope="col">Number of student</th>
-                        <th scope="col">Added By</th>
-                        <th scope="col">Create Date</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
+            <div class="table-responsive">
+                <table class="table table-striped bg-secondary table_class" id="table_class">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Class Name</th>
+                            <th scope="col">Room</th>
+                            <th scope="col">Building</th>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Number of student</th>
+                            <th scope="col">Added By</th>
+                            <th scope="col">Create Date</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
                     <tbody id="body-class">
                         @foreach ($allClass as $item)
                                 <tr>
@@ -54,7 +55,7 @@
                                                 <span class="edit-icon"><i class="bi bi-pencil-square"></i></span>
                                             </button>
                                             {{-- assign subject btn  --}}
-                                            <button class="edit-post btn btn-success assign-subject-class" data-id="{{$item->id}}" data-course_id="{{$item->course_id}}" data-start="{{$item->startTime}}" data-end="{{$item->endTime}}" data-bs-toggle="modal" data-bs-target="#update-class">
+                                            <button class="edit-post btn btn-success" data-bs-toggle="modal" data-bs-target="#coming-soon">
                                                 <span class="edit-tooltip">add subject</span>
                                                 <span class="edit-icon"><i class="bi bi-stack"></i></span>                                        
                                             </button>
@@ -68,7 +69,8 @@
                                 </tr>
                         @endforeach
                     </tbody>
-            </table>
+                </table>
+            </div>
             {{$allClass->links()}}
         </div>
 </div>

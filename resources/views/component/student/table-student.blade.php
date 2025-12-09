@@ -43,36 +43,41 @@
                         <td>{{ ucfirst($item->role) }}</td>
 
                         <td>
-                            @if ($item->classes->count() > 0)
-                                {{-- change class & remove student from class --}}
-                                <button class="btn btn-primary remove-student-btn" 
-                                    data-id="{{ $item->id }}"
-                                    data-class="{{$item->classes->first()->id}}"
-                                    data-class-name="{{$item->classes->first()->name}}"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#remove-student"
-                                >
-                                    <i class="bi bi-trash"></i>
-                                </button>
+                            <div class="d-flex gap-1">
+                                @if ($item->classes->count() > 0)
+                                    {{-- change class & remove student from class --}}
+                                    <button class="remove-post btn btn-primary remove-student-btn" 
+                                        data-id="{{ $item->id }}"
+                                        data-class="{{$item->classes->first()->id}}"
+                                        data-class-name="{{$item->classes->first()->name}}"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#remove-student"
+                                    >
+                                        <span class="remove-tooltip">remove</span>
+                                        <span class="icon"><i class="bi bi-trash"></i></span>
+                                    </button>
 
-                                <button class="btn btn-dark change-class-btn" 
-                                    data-id="{{ $item->id }}"
-                                    data-class="{{$item->classes->first()->id}}"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#change-class"
-                                >
-                                    <i class="bi bi-arrow-left-right"></i>
-                                </button>
-                            @else
-                                {{-- assign class --}}
-                                <button class="btn btn-light assign-class-btn"
-                                    data-id="{{ $item->id }}"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#assign-class"
-                                >
-                                    <i class="bi bi-send-arrow-down-fill"></i>
-                                </button>
-                            @endif
+                                    <button class="change-post btn btn-dark change-class-btn" 
+                                        data-id="{{ $item->id }}"
+                                        data-class="{{$item->classes->first()->id}}"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#change-class"
+                                    >
+                                        <span class="change-tooltip">change class</span>
+                                        <span class="icon"><i class="bi bi-arrow-left-right"></i></span>
+                                    </button>
+                                @else
+                                    {{-- assign class --}}
+                                    <button class="assign-post btn btn-light assign-class-btn"
+                                        data-id="{{ $item->id }}"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#assign-class"
+                                    >
+                                        <span class="assign-tooltip">assign class</span>
+                                        <span class="icon"><i class="bi bi-send-arrow-down-fill"></i></span>
+                                    </button>
+                                @endif
+                            </div>
                         </td>
                     </tr>
                 @endforeach

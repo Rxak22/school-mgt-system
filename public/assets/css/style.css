@@ -139,6 +139,155 @@
     color: #ffffff;
   }
 
+  /* remove student */
+.remove-post {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.remove-tooltip {
+    position: absolute;
+    top: 0px;
+    font-size: 14px;
+    background: #000000;
+    color: #ffffff;
+    padding: 5px 6px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s;
+    width: 65px; /* change the width as needed */
+}
+  
+.remove-tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #000000;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.4s;
+}
+  
+.remove-post:hover .remove-tooltip {
+    top: -37px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+  
+.remove-post:hover .remove-tooltip,
+.remove-post:hover .remove-tooltip::before {
+    background: #000000;
+    color: #ffffff;
+}
+
+  /* change student */
+.change-post {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.change-tooltip {
+    position: absolute;
+    top: 0px;
+    font-size: 14px;
+    background: #000000;
+    color: #ffffff;
+    padding: 5px 6px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s;
+    width: 95px; /* change the width as needed */
+}
+  
+.change-tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #000000;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.4s;
+}
+  
+.change-post:hover .change-tooltip {
+    top: -37px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+  
+.change-post:hover .change-tooltip,
+.change-post:hover .change-tooltip::before {
+    background: #000000;
+    color: #ffffff;
+}
+
+  /* assign student */
+.assign-post {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.assign-tooltip {
+    position: absolute;
+    top: 0px;
+    font-size: 14px;
+    background: #000000;
+    color: #ffffff;
+    padding: 5px 6px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s;
+    width: 90px; /* assign the width as needed */
+}
+  
+.assign-tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #000000;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.4s;
+}
+  
+.assign-post:hover .assign-tooltip {
+    top: -37px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+  
+.assign-post:hover .assign-tooltip,
+.assign-post:hover .assign-tooltip::before {
+    background: #000000;
+    color: #ffffff;
+}
 
 /*** Button ***/
 .btn {
@@ -408,3 +557,31 @@
     color: #000 !important;
     font-style: italic;
 }
+
+
+/* for scrollbar style */
+    .table-responsive::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .table-responsive::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+    }
+
+    .table-responsive::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+    .table-responsive::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #0dcaf0 0%, #0d6efd 100%);
+        box-shadow: 0 0 12px rgba(13, 110, 253, 0.6);
+    }
+
+    /* Firefox Scrollbar */
+    .table-responsive {
+        scrollbar-color: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%) rgba(255, 255, 255, 0.08);
+        scrollbar-width: thin;
+    }

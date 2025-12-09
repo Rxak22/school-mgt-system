@@ -18,7 +18,7 @@ return new class extends Migration
         $table->string('name');
         $table->string('room_number');
         $table->string('building');
-        $table->integer('number_of_student');
+        $table->integer('number_of_student')->default(0);
         $table->unsignedBigInteger('teacher_id');
         $table->unsignedBigInteger('department_id');
 

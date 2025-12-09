@@ -27,7 +27,6 @@
             @include('component.course.add-modal')
             @include('component.course.modal-update')
 
-
             <div class="d-flex pt-3 px-1">
                 <!-- table -->
                 @include('component.course.table-course')

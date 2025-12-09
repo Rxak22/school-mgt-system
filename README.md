@@ -4,15 +4,19 @@ This is a web application built using the Laravel framework to manage school dat
 
 ---
 
-## 🔗 Live Demo & Credentials
+## 🔗 Live Demo & Deployment Info
 
-You can view and interact with the live deployment of this project.
+You can view and interact with the live deployment of this project.  
+This is a **full-stack Laravel application** where Laravel handles both the backend logic and the Blade-based frontend.  
+The application is deployed on **`Vercel`**, and the database is hosted on **`Supabase`** (PostgreSQL).
 
 | Detail | Value |
 | :--- | :--- |
 | **Live URL** | **[https://school-mgt-system-psi.vercel.app/](https://school-mgt-system-psi.vercel.app/)** |
 | **Admin Email** | `admin@gmail.com` |
 | **Admin Password** | `password123` |
+| **Frontend & Backend** | Laravel (deployed on [Vercel](https://vercel.com/)) |
+| **Database** | [Supabase](https://supabase.com/) (PostgreSQL) |
 
 ---
 

@@ -515,15 +515,11 @@
     border-bottom-color: var(--primary);
 }
 
-
-/*** Testimonial ***/
 .progress .progress-bar {
     width: 0px;
     transition: 2s;
 }
 
-
-/*** Testimonial ***/
 .testimonial-carousel .owl-dots {
     margin-top: 24px;
     display: flex;
@@ -558,8 +554,6 @@
     font-style: italic;
 }
 
-
-/* for scrollbar style */
     .table-responsive::-webkit-scrollbar {
         height: 8px;
     }
@@ -580,8 +574,64 @@
         box-shadow: 0 0 12px rgba(13, 110, 253, 0.6);
     }
 
-    /* Firefox Scrollbar */
     .table-responsive {
         scrollbar-color: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%) rgba(255, 255, 255, 0.08);
         scrollbar-width: thin;
+    }
+
+    /* fixed classes tables fit the page space */
+    .table_class {
+        width: 100% !important;
+        table-layout: fixed; 
+        border-collapse: collapse;
+    }
+
+    .table_class th,
+    .table_class td {
+        white-space: normal; 
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        padding: .42rem .6rem; 
+        vertical-align: middle;
+    }
+
+    .table_class th:nth-child(1),
+    .table_class td:nth-child(1) {
+        width: 4%;
+        max-width: 40px;
+    }
+
+    .table_class th:last-child,
+    .table_class td:last-child {
+        width: 14%;
+        min-width: 120px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .table_class td .btn {
+        padding: .25rem .45rem;
+        font-size: .85rem;
+    }
+
+    /* Allow horizontal scrolling on medium and small screens */
+    @media (max-width: 991.98px) {
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+
+    /* Hide less important columns only on extra-small screens (phones) */
+    @media (max-width: 575.98px) {
+        .table_class th:nth-child(7),
+        .table_class td:nth-child(7), /* Number of student */
+        .table_class th:nth-child(8),
+        .table_class td:nth-child(8), /* Added By */
+        .table_class th:nth-child(9),
+        .table_class td:nth-child(9)  /* Create Date */
+        {
+            display: none;
+        }
     }

@@ -18,7 +18,7 @@
             </div>
             <div class="table-responsive">
                 <table class="table table-striped bg-secondary table_class" id="table_class">
-                    <thead>
+                    <thead style="font-size: 15px;">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Class Name</th>
@@ -26,7 +26,7 @@
                             <th scope="col">Building</th>
                             <th scope="col">Subject</th>
                             <th scope="col">Department</th>
-                            <th scope="col">Number of student</th>
+                            <th scope="col">Enrolled</th>
                             <th scope="col">Added By</th>
                             <th scope="col">Create Date</th>
                             <th scope="col">Action</th>

@@ -1,4 +1,4 @@
-<?php 
+<?php
     use App\Models\User;
     use App\Models\Course;
 ?>
@@ -13,29 +13,27 @@
                             <option value="{{$item->id}}">{{$item->department_name}}</option>
                         @endforeach
                     </select>
-                    <button type="button" class="btn btn-info btn-sm mb-4 create-class" id="create-class" data-bs-toggle="modal" data-bs-target="#add-class">Add Class</button> 
+                    <button type="button" class="btn btn-info btn-sm mb-4 create-class" id="create-class" data-bs-toggle="modal" data-bs-target="#add-class">Add Class</button>
                 </div>
             </div>
             <div class="table-responsive">
                 <table class="table table-striped bg-secondary table_class" id="table_class">
                     <thead style="font-size: 15px;">
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Class Name</th>
-                            <th scope="col">Room</th>
-                            <th scope="col">Building</th>
-                            <th scope="col">Subject</th>
-                            <th scope="col">Department</th>
-                            <th scope="col">Enrolled</th>
-                            <th scope="col">Added By</th>
-                            <th scope="col">Create Date</th>
-                            <th scope="col">Action</th>
+                            <th>CN</th>
+                            <th>Room</th>
+                            <th>Building</th>
+                            <th>Subject</th>
+                            <th>Department</th>
+                            <th>Enrolled</th>
+                            <th>Added By</th>
+                            <th>Create Date</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody id="body-class">
                         @foreach ($allClass as $item)
                                 <tr>
-                                    <td scope="row">{{$item->id}}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->room_number }}</td>
                                     <td>{{ $item->building }}</td>
@@ -57,7 +55,7 @@
                                             {{-- assign subject btn  --}}
                                             <button class="edit-post btn btn-success" data-bs-toggle="modal" data-bs-target="#coming-soon">
                                                 <span class="edit-tooltip">add subject</span>
-                                                <span class="edit-icon"><i class="bi bi-stack"></i></span>                                        
+                                                <span class="edit-icon"><i class="bi bi-stack"></i></span>
                                             </button>
                                             {{-- add student btn  --}}
                                             <button class="edit-post btn btn-warning add-student" data-id="{{$item->id}}" data-bs-toggle="modal" data-bs-target="#add-student-class">

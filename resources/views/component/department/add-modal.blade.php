@@ -12,23 +12,23 @@
 
           <div class="mb-3">
             <label for="department_name" class="form-label">Department Name</label>
-            <input 
-              type="text" 
-              class="form-control" 
-              name="department_name" 
-              id="department_name" 
+            <input
+              type="text"
+              class="form-control"
+              name="department_name"
+              id="department_name"
               placeholder="Enter department name">
           </div>
 
           <div class="mb-3">
             <label for="department_code" class="form-label">
-              Department Code <small class="text-warning">(Please be careful, can’t change later)</small>
+              Department Code
             </label>
-            <input 
-              type="text" 
-              class="form-control" 
-              name="department_code" 
-              id="department_code" 
+            <input
+              type="text"
+              class="form-control"
+              name="department_code"
+              id="department_code"
               placeholder="Enter department code">
           </div>
         </div>

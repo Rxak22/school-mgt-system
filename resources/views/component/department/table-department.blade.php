@@ -3,14 +3,14 @@
         <div class="d-flex justify-content-between">
             <h6 class="mb-4">Department List</h6>
             <div class="d-flex flex-row gap-2">
-                <button 
-                    type="button" 
-                    class="btn btn-info btn-sm mb-4 create-course" 
-                    id="create-course" 
-                    data-bs-toggle="modal" 
+                <button
+                    type="button"
+                    class="btn btn-info btn-sm mb-4 create-course"
+                    id="create-course"
+                    data-bs-toggle="modal"
                     data-bs-target="#add-department">
                     Add Department
-                </button> 
+                </button>
             </div>
         </div>
 
@@ -19,7 +19,7 @@
             <thead>
                 <tr>
                     <th scope="col">Department Code</th>
-                    <th scope="col">Department Name</th> 
+                    <th scope="col">Department Name</th>
                     <th scope="col">Added By</th>
                     <th scope="col">Create Date</th>
                     <th scope="col">Action</th>
@@ -35,21 +35,21 @@
                         <td>
                             <div class="d-flex gap-1">
                                 {{-- Delete Button --}}
-                                <button 
-                                    class="btn btn-danger delete-department" 
-                                    value="{{ $item->id }}" 
-                                    data-bs-toggle="modal" 
+                                <button
+                                    class="btn btn-danger delete-department"
+                                    value="{{ $item->id }}"
+                                    data-bs-toggle="modal"
                                     data-bs-target="#delete-department">
                                     <i class="bi bi-trash"></i>
                                 </button>
 
                                 {{-- Update Button --}}
-                                <button 
-                                    class="btn btn-info update-department" 
-                                    data-id="{{ $item->id }}" 
-                                    data-name="{{ $item->department_name }}" 
-                                    data-code="{{ $item->department_code }}" 
-                                    data-bs-toggle="modal" 
+                                <button
+                                    class="btn btn-info update-department"
+                                    data-id="{{ $item->id }}"
+                                    data-name="{{ $item->department_name }}"
+                                    data-code="{{ $item->department_code }}"
+                                    data-bs-toggle="modal"
                                     data-bs-target="#update-department">
                                     <i class="bi bi-pencil-square"></i>
                                 </button>

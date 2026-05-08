@@ -34,7 +34,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('user/search', [UserController::class, 'searchUser'])->name('user.search');
 });
 
-// Student list - Accessible by Admin and Teacher
+// Student list - by Admin and Teacher
 Route::middleware(['auth', 'role:admin,teacher'])->group(function () {
     Route::get('student-list', [UserController::class, 'studentList'])->name('student.index');
     Route::get('student/filter', [UserController::class, 'filterStudent'])->name('student.filter');
@@ -55,8 +55,8 @@ Route::middleware(['auth', 'role:admin,teacher'])->group(function () {
     Route::post('class/change-student-class', [ClassesController::class, 'changeStudentClass'])->name('class.change-student-class');
 });
 
-// department - Admin and Teacher
-Route::middleware(['auth', 'role:admin,teacher'])->group(function () {
+// department - Admin only
+Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('department', [DepartmentController::class, 'index'])->name('department.index');
     Route::post('department/store', [DepartmentController::class,'store'])->name('department.store');
     Route::delete('department/destroy', [DepartmentController::class, 'destroy'])->name('department.destroy');

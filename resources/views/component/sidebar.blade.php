@@ -5,7 +5,7 @@
         </a>
         <div class="d-flex align-items-center ms-4 mb-4">
             <div class="position-relative">
-                <img class="rounded-circle" src="{{ $user->img 
+                <img class="rounded-circle" src="{{ $user->img
                                                     ? asset('storage/userProfile/'. $user->img)
                                                     : asset('assets/img/default-user.png')
                                                 }}" alt="ok" style="width: 40px; height: 40px;">
@@ -27,7 +27,7 @@
                         <a href="element.html" class="dropdown-item">Other Elements</a>
                     </div>
                 </div> --}}
-                <a href="{{route('department.index')}}" class="nav-item nav-link {{Request::path() == 'department' ? 'active' : ''}}"><i class="bi bi-building-gear"></i> Department</a>
+                {{-- <a href="{{route('department.index')}}" class="nav-item nav-link {{Request::path() == 'department' ? 'active' : ''}}"><i class="bi bi-building-gear"></i> Department</a> --}}
                 <a href="{{route('course.index')}}" class="nav-item nav-link {{Request::path() == 'course' ? 'active' : ''}}"><i class="bi bi-journal-text"></i> Subject</a>
                 <a href="{{route('class.index')}}" class="nav-item nav-link {{Request::path() == 'class' ? 'active' : ''}}"><i class="bi bi-hospital"></i> Class Room</a>
                 <a href="{{route('student.index')}}" class="nav-item nav-link {{Request::path() == 'student-list' ? 'active' : ''}}"><i class="bi bi-person-lines-fill"></i> List Student</a>

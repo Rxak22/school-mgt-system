@@ -53,10 +53,12 @@ class CourseController extends Controller
     }
 
     public function search(Request $request) {
-    
-        $searchResults = Course::where('course_name', 'LIKE', '%'. $request->search . '%')
+        $searchResults = Course::join('departments as d', 'courses.department_id', '=', 'd.id')
+            ->select('courses.*', 'd.department_name')
+            ->where('courses.course_name', 'LIKE', '%' . $request->search . '%')
+            ->orWhere('d.department_name', 'LIKE', '%' . $request->search . '%')
             ->paginate(7);
-    
+
         if ($searchResults->count() > 0) {
             return view('component.course.search-table', [
                 'allcourse' => $searchResults,
@@ -67,7 +69,7 @@ class CourseController extends Controller
             ]);
         }
     }
-    
+
     public function update(Request $request)
     {
         $validate = validator($request->all(), [

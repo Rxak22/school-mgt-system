@@ -19,13 +19,13 @@ class ClassesController extends Controller
                 ->paginate(7),
             'user' => auth()->user(),
             'department' => Department::select('department_name', 'id')->get(),
-        ]); 
+        ]);
     }
-  
+
     public function store(Request $request)
     {
         $validate = validator($request->all(), [
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|unique:classes,name',
             'room_number' => 'required|numeric',
             'building' => 'required',
             'department' => 'required',
@@ -113,17 +113,23 @@ class ClassesController extends Controller
         }
 
         if ($request->filter == 'filter') {
-            return response()->json(['status' => 'filter']);   
+            return response()->json(['status' => 'filter']);
         }
 
-        return response()->json(['status' => 'error']);   
+        return response()->json(['status' => 'error']);
     }
 
     public function search(Request $request) {
         $search = Classes::withCount('students')
-            ->where('name','LIKE', '%'. $request->searchQuery. '%')
+            ->join('departments as d', 'classes.department_id', '=', 'd.id')
+            ->select('classes.*', 'd.department_name')
+            ->where(function ($query) use ($request) {
+                $query->where('classes.name', 'LIKE', '%' . $request->searchQuery . '%')
+                    ->orWhere('classes.room_number', 'LIKE', '%' . $request->searchQuery . '%')
+                    ->orWhere('d.department_name', 'LIKE', '%' . $request->searchQuery . '%');
+            })
             ->paginate(7);
-        
+
         if ($search->count() > 0) {
             return view('component.class.filter-table', [
                 'allClass' => $search,
@@ -131,9 +137,9 @@ class ClassesController extends Controller
         } else {
             return response()->json([
                 'status' => 'failed',
-            ]); 
+            ]);
         }
-        
+
     }
 
     public function getStudentsForClass($classId)

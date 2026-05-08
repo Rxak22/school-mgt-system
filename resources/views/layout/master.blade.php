@@ -13,12 +13,12 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
-    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    
+
     {{-- toastr lib --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css">
 
@@ -82,7 +82,7 @@
 
 <script>
      $.ajaxSetup({
-            headers: { 
+            headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
              }
         });
@@ -147,7 +147,7 @@
         $('#form_data').submit(function(e){
             e.preventDefault();
 
-            // no neet to do this 
+            // no neet to do this
             // Append form data to the FormData object
             // formData.append('name', $('#name').val());
             // formData.append('email', $('#email').val());
@@ -174,14 +174,14 @@
                         $('#form_data')[0].reset();
                         $('.table_data').load(location.href + ' .table_data');
                         $('.errMsg').html('');
-                        
+
                         toastr.success('New user add to system', 'success');
 
-                    } 
+                    }
                     else if (response.status == "error") {
                         $('.errMsg').html('');
                         $('.errMsg').addClass('text-danger');
-                        
+
                         $.each(response.message, function (key, value) {
                             $('.errMsg').append('<li>' + value + '</li>');
                         })
@@ -191,11 +191,11 @@
 
         });
 
-        //show user image 
+        //show user image
         // $('.table-tr').mouseover(function (e){
         //     e.preventDefault();
         //     var id = $(this).data('id');
-            
+
         //     $.ajax({
         //         url: "{{route('user.show')}}",
         //         method: "get",
@@ -352,7 +352,7 @@
         $('.userSearch').keyup(function (e) {
             e.preventDefault();
             searchVal = $(this).val()
-            
+
             $.ajax({
                 url: "{{route('user.search')}}",
                 method: "post",
@@ -395,7 +395,7 @@
                     } else if (res.status == 'failed') {
                         $('.class_err').html('');
                         $('.class_err').addClass('text-danger');
-                        
+
                         $.each(res.message, function (key, value) {
                             $('.class_err').append('<li>' + value + '</li>');
                         })
@@ -408,7 +408,7 @@
             });
         });
 
-        // add course 
+        // add course
         $('.submit-course').click(function (e) {
             e.preventDefault();
             var data = {
@@ -443,7 +443,7 @@
         $('.courseSearch').keyup(function (e) {
             e.preventDefault();
             searchVal = $(this).val();
-            
+
             $.ajax({
                 url: "{{route('course.search')}}",
                 method: "post",
@@ -453,7 +453,7 @@
                 success: function (res) {
                     $('#tbl-body').html(res);
                     if (res.status == "failed"){
-                        $('#tbl-body').html("<tr><td colspan='7'><h5 class='d-flex justify-content-center text-warning'>System don't have Course name \""+ searchVal+ "\"</h5></td></tr>")
+                        $('#tbl-body').html("<tr><td colspan='7'><h5 class='d-flex justify-content-center text-warning'>System don't have Course/Department name \""+ searchVal+ "\"</h5></td></tr>")
                     }
                 }
             })
@@ -512,7 +512,7 @@
             $('#conf-course').val($(this).val());
         })
 
-        $(document).on('click', '.conf_delete_course', function () {    
+        $(document).on('click', '.conf_delete_course', function () {
                 $.ajax({
                     url: "{{route('course.destroy')}}",
                     method: "delete",
@@ -533,13 +533,13 @@
                         console.error("AJAX Error:", error);
                         toastr.error('Something went wrong', 'Error');
                     }
-                            
+
                 })
             })
 
 
-        
-            // search class 
+
+            // search class
         $('.classSearch').keyup(function () {
             searchQuery = $(this).val();
             $.ajax({
@@ -552,8 +552,8 @@
                     $('#body-class').html(res)
 
                     if (res.status == "failed"){
-                        $('#body-class').html("<tr><td colspan='10'><h5 class='d-flex justify-content-center text-warning'>System don't have Class name \""+ searchQuery+ "\"</h5></td></tr>");
-                    } 
+                        $('#body-class').html("<tr><td colspan='10'><h5 class='d-flex justify-content-center text-warning'>System can't find: \""+ searchQuery+ "\" please enter again!</h5></td></tr>");
+                    }
                 }
             })
         })
@@ -592,7 +592,7 @@
                         } else if (res.status == 'failed') {
                             $('.class_update_err').html('');
                             $('.class_update_err').addClass('text-danger');
-                            
+
                             $.each(res.message, function (key, value) {
                                 $('.class_update_err').append('<li>' + value + '</li>');
                             })
@@ -601,7 +601,7 @@
 
                 })
             })
-        
+
         // add student to class
         $(document).on('click', '.add-student', function() {
             const classId = $(this).data('id');
@@ -619,7 +619,7 @@
 
                     allUsers.forEach(user => {
                         const isEnrolledHere = enrolledIds.includes(user.id);
-                        const isInAnotherClass = 
+                        const isInAnotherClass =
                             studentsWithAnyClass.includes(user.id) && !isEnrolledHere;
 
                         let optionText = user.name;
@@ -643,7 +643,7 @@
                         `);
                     });
 
-                    // Refresh select2 
+                    // Refresh select2
                     select.trigger('change');
                 },
                 error: function() {
@@ -655,7 +655,7 @@
         // show class detail student
         $(document).on('click', '.student_detail', function (e) {
             e.preventDefault();
-            
+
             var class_id = $(this).data('id');
             $.ajax({
                 url: "/class/show-students/" + class_id,
@@ -664,7 +664,7 @@
                 $('#body-show-student').html(res);
             })
         })
-        
+
         var class_id = null;
         $(document).on('click', '.add-student', function () {
             class_id = $(this).data('id');
@@ -672,7 +672,7 @@
 
         $(document).on('click', '.add-student-class', function () {
                 var all_student = $('.all_student').val();
-                
+
                 $.ajax({
                     url: "{{route('class.add-student-to-class')}}",
                     method: "post",
@@ -731,13 +731,13 @@
             className = $(this).data('class-name');
 
             $('.class-text').text(className);
-            
+
             $('#show-student').modal('hide')
         });
 
         $(document).on('click', '.conf_remove_student', function (e) {
             e.preventDefault();
-            
+
             $.ajax({
                 url: "{{ route('class.remove-student') }}",
                 method: "POST",
@@ -747,7 +747,7 @@
                 },
                 dataType: "json",
                 success: function (res) {
-                    
+
                     if (res.status == 'success'){
                             $('#table_class').load(location.href +' #table_class > *');
 
@@ -776,7 +776,7 @@
 
         $(document).on('click', '.change-student-class', function (e) {
             e.preventDefault();
-            
+
             $.ajax({
                 url: "{{ route('class.change-student-class')}}",
                 method: "POST",
@@ -863,11 +863,11 @@
                         }
                     }
                 })
-            
+
         })
 
 
-        // filter student in class 
+        // filter student in class
         $(document).on('change', '#filter-student', function (e) {
             e.preventDefault()
 
@@ -935,7 +935,7 @@
                         $('#table_department').load(location.href + ' #table_department');
                         $('#add-department').modal('hide');
                         toastr.success('Department added successfully', 'Success');
-                    } 
+                    }
                     else if (res.status === 'failed') {
                         $('.department_err').html('').addClass('text-danger');
                         $.each(res.message, function (key, val) {
@@ -954,7 +954,7 @@
         $(document).on('click', '.delete-department', function () {
             $('#conf-department').val($(this).val());
         })
-        $(document).on('click', '.conf_delete_department', function () {    
+        $(document).on('click', '.conf_delete_department', function () {
                 $.ajax({
                     url: "{{route('department.destroy')}}",
                     method: "delete",
@@ -971,7 +971,7 @@
                             toastr.error('Opps! Something went wrong', 'error');
                         }
                     }
-                            
+
                 })
             })
 
@@ -1040,7 +1040,7 @@
                 success: function (res) {
                     if (typeof res === "string") {
                         $('#tbl-body').html(res);
-                    } 
+                    }
                     else if (res.status === "failed") {
                         $('#tbl-body').html(
                             "<tr><td colspan='5'><h5 class='d-flex justify-content-center text-warning'>System don't have Department name/id \""+ query+ "\"</h5></td></tr>"
@@ -1078,7 +1078,7 @@
             })
         })
     });
-    
+
 </script>
 
 </html>
